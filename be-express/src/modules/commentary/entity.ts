@@ -10,6 +10,12 @@ class Commentary {
 
    @Column({ type: "time with time zone", length: 255 })
    createdAt: Date;
+
+   @Column({ type: "text", length: 50 })
+   title: string;
+
+   @Column({ type: "text", length: 255 })
+   commentary: string;
 }
 
 export default Commentary;

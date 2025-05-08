@@ -8,8 +8,8 @@ class Favorite {
    @Column({ type: "text", length: 50, unique: true })
    authorId: string;
 
-   @Column({ type: "text", length: 50, unique: true })
-   recipeId: string;
+   @Column({ type: "number", length: 50, unique: true })
+   recipeId: number;
 
    @Column({ type: "boolean" })
    isDeleted: boolean;

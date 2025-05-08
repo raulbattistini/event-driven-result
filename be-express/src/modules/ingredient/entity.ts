@@ -8,6 +8,9 @@ class Ingredient {
    @Column({ type: "text", length: 50, unique: true })
    recipeId: string;
 
+   @Column({ type: "text", length: 50 })
+   title: string;
+
    @Column({ type: "text", length: 255, unique: true })
    ingredientId: string;
 
