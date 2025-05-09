@@ -217,6 +217,11 @@ class RecipeService implements IRecipeService {
       ingredients: Array<Ingredient> | Array<Partial<Ingredient>>,
    ): Promise<Result<Partial<Recipe>, AbstractGlobalError>> {
       try {
+         // TODO: Implement the logic for filtering recipes by ingredients.
+         return {
+            ok: false,
+            error: new AbstractGlobalError("Method not implemented", 501),
+         };
       } catch (error) {
          return {
             ok: false,
