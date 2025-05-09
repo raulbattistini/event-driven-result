@@ -1,10 +1,9 @@
 import IAbstractRepository from "../../../shared/abstract/repository/interface";
 import AbstractGlobalError from "../../../shared/utils/helpers/errors/global.error";
-import { Result } from "../../../shared/utils/helpers/result.util";
 import Recipe from "../entity";
-import RecipeSchema from "../schema";
+import { Result } from "../../../shared/utils/helpers/result.util";
+import { RecipeID } from "../schema";
 
-type RecipeID = typeof RecipeSchema.shape.id;
 interface IRecipeRepository
    extends IAbstractRepository<Recipe, Partial<Recipe>, RecipeID> {
    getRecipeByAuthorId: (

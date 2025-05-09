@@ -1,10 +1,9 @@
 import { Result } from "../../../shared/utils/helpers/result.util";
+import { UserID } from "../schema";
 import IAbstractRepository from "../../../shared/abstract/repository/interface";
 import User from "../entity";
-import UserSchema from "../schema";
 import AbstractGlobalError from "../../../shared/utils/helpers/errors/global.error";
 
-type UserID = typeof UserSchema.shape.id;
 interface IUserRepository
    extends IAbstractRepository<User, Partial<User>, UserID> {
    getUserByUsername: (

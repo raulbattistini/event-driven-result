@@ -7,6 +7,10 @@ import { Result } from "../../shared/utils/helpers/result.util";
 import passwordHash from "../../shared/utils/helpers/passwordHash";
 
 class UserValidator implements IUserValidator {
+   public readonly schema: typeof UserSchema;
+   constructor() {
+      this.schema = UserSchema;
+   }
    validatePayload(
       payload: any,
       schema: typeof UserSchema,
@@ -40,7 +44,7 @@ class UserValidator implements IUserValidator {
       return { ok: true, value: payload };
    }
    validateUUID(uuid: string): Result<string, AbstractGlobalError> {
-      const isValid = regex.uuid.test(uuid);
+      const isValid = regex.uuidV4.test(uuid);
       if (!isValid) {
          return {
             ok: false,
@@ -137,6 +141,14 @@ class UserValidator implements IUserValidator {
          };
       }
       return { ok: true, value: username };
+   }
+   toResponse<User>(
+      data: Array<User> | Array<Partial<User>>,
+   ): Result<Array<Partial<User>>, AbstractGlobalError> {
+      return {
+         ok: true,
+         value: instanceToPlain(data),
+      };
    }
 }
 

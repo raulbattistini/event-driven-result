@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z, ZodNumber, ZodString } from "zod";
 export namespace regex {
    interface IRegexValidator {
       isValid(value: string, regex: RegExp): boolean;
@@ -18,4 +18,5 @@ export namespace regex {
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
    export const username = /^[a-zA-Z0-9._-]{3,20}$/;
    export const date = /^\d{2}-\d{2}-\d{4}$/;
+   export type IDUnion = UUID | ZodString | ZodNumber;
 }
