@@ -14,5 +14,6 @@ const UserSchema = z.object({
 });
 
 export type USER_SCHEMA = z.infer<typeof UserSchema>;
+export type UserID = typeof UserSchema.shape.id;
 
 export default UserSchema;

@@ -24,5 +24,6 @@ const RecipeSchema = z.object({
 });
 
 export type RECIPE_SCHEMA = z.infer<typeof RecipeSchema>;
+export type RecipeID = typeof RecipeSchema.shape.id;
 
 export default RecipeSchema;

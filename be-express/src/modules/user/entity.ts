@@ -5,7 +5,7 @@ import { regex } from "../../shared/utils/helpers/regex.util";
 @Entity("users")
 class User {
    @PrimaryGeneratedColumn("uuid")
-   id: typeof regex.uuid;
+   id: typeof regex.uuidV4;
 
    @Column({ type: "text", length: 50, unique: true })
    username: string;

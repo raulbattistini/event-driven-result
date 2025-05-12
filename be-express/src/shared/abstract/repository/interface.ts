@@ -1,8 +1,8 @@
 import { DeepPartial } from "typeorm";
 import { regex } from "../../utils/helpers/regex.util";
 import { Result } from "../../utils/helpers/result.util";
-import AbstractGlobalError from "../../utils/helpers/errors/global.error";
 import { ZodNumber } from "zod";
+import AbstractGlobalError from "../../utils/helpers/errors/global.error";
 
 interface IAbstractRepository<
    T,
